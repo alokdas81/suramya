@@ -105,8 +105,8 @@ class ArticleController extends Controller
     public function destroy($id)
     {
         $article = Article::find($id);
-        $share->delete();
+        $article->delete();
 
-        return redirect('/shares')->with('success', 'Article has been deleted Successfully');
+        return redirect('/article')->with('success', 'Article has been deleted Successfully');
     }
 }

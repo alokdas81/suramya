@@ -32,10 +32,10 @@
             <td>{{$article->details}}</td>
             <td align="center"><a href="{{ route('article.edit',$article->id)}}" class="btn btn-primary">Edit</a></td>
             <td align="center">
-                <form action="{{ route('article.destroy', $article->id)}}" method="post">
+                <form id="article-del-frm" action="{{ route('article.destroy', $article->id)}}" method="post">
                   @csrf
                   @method('DELETE')
-                  <button class="btn btn-danger" type="submit">Delete</button>
+                  <button class="btn btn-danger" type="button" onclick="delArticle(this.form);">Delete</button>
                 </form>
             </td>
         </tr>
@@ -45,3 +45,10 @@
 <div>
 @endsection
 
+<script type="text/javascript">
+  function delArticle(frm)
+  {
+    if(confirm("Are you sure want to delete this record!"))
+      frm.submit();
+  }
+</script>

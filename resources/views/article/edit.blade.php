@@ -25,11 +25,11 @@
         @csrf
         <div class="form-group">
           <label for="name">Title:</label>
-          <input type="text" class="form-control" name="title" value={{ $article->title }} />
+          <input type="text" class="form-control" name="title" value="{{ $article->title }}" />
         </div>
         <div class="form-group">
           <label for="price">Details:</label>
-          <input type="text" class="form-control" name="details" value={{ $article->details }} />
+          <input type="text" class="form-control" name="details" value="{{ $article->details }}" />
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
       </form>
