@@ -7,7 +7,6 @@ use App\Http\Controllers\API\BaseController as BaseController;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use Validator;
-use Mail;
 
 class UserController extends BaseController
 {
@@ -73,7 +72,6 @@ class UserController extends BaseController
 
         try
         {
-            $mailData = array();
             $input = $request->all(); 
             $input['password'] = bcrypt($input['password']); 
             $user = User::create($input); 
