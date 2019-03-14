@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::resource('article', 'ArticleController');
+Route::resource('/', 'ArticleController');
